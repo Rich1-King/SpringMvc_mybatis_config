@@ -26,11 +26,17 @@
               <property name="dataSource" ref="dataSource"/>
               <property name="configLocation"
                         value="classpath:/mybatis-config.xml"/>
-       </bean>
-
-           <bean class="org.mybatis.spring.mapper.MapperFactoryBean">
+      <!--
+        <bean class="org.mybatis.spring.mapper.MapperFactoryBean">
             <property name="mapperInterface" value="com.dao.IPerson"/>
             <property name="sqlSessionFactory"
+                      ref="sqlSessionFactory"/>
+        </bean>
+     -->
+        <!--或-->
+        <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+            <property name="basePackage" value="com.dao"/>
+            <property name="sqlSessionFactoryBeanName"
                       value="sqlSessionFactory"/>
         </bean>
 
