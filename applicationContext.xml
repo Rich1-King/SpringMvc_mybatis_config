@@ -28,9 +28,9 @@
                         value="classpath:/mybatis-config.xml"/>
        </bean>
 
-        <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-            <property name="basePackage" value="com.dao"/>
-            <property name="sqlSessionFactoryBeanName"
+           <bean class="org.mybatis.spring.mapper.MapperFactoryBean">
+            <property name="mapperInterface" value="com.dao.IPerson"/>
+            <property name="sqlSessionFactory"
                       value="sqlSessionFactory"/>
         </bean>
 
